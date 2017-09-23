@@ -10,8 +10,8 @@ class xrange_iterator
 
     friend xrange;
 
-    constexpr xrange_iterator(int end) : value(end), end(end) {}
-    constexpr xrange_iterator(int value, int end) : value(value), end(end) {}
+    constexpr xrange_iterator(int _end) : value(_end), end(_end) {}
+    constexpr xrange_iterator(int _value, int _end) : value(_value), end(_end) {}
     constexpr bool ended() const { return (value >= end); }
 
     public:
