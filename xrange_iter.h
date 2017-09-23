@@ -10,9 +10,9 @@ class xrange_iterator
 
     friend xrange;
 
-    xrange_iterator(int end) : value(end), end(end) {}
-    xrange_iterator(int value, int end) : value(value), end(end) {}
-    bool ended() const { return (value >= end); }
+    constexpr xrange_iterator(int end) : value(end), end(end) {}
+    constexpr xrange_iterator(int value, int end) : value(value), end(end) {}
+    constexpr bool ended() const { return (value >= end); }
 
     public:
         xrange_iterator& operator++()
@@ -27,18 +27,18 @@ class xrange_iterator
             return xrange_iterator(value - 1, end);
         }
 
-        bool operator==(const xrange_iterator& other) const
+        constexpr bool operator==(const xrange_iterator& other) const
         {
             return ((value == other.value && end == other.end) ||
                                     (ended() && other.ended()));
         }
 
-        bool operator!=(const xrange_iterator& other) const
+        constexpr bool operator!=(const xrange_iterator& other) const
         {
             return !(*this == other);
         }
 
-        int operator*() const
+        constexpr int operator*() const
         {
             return value;
         }

@@ -9,15 +9,15 @@ class xrange
     int _end;
 
     public:
-        explicit xrange(const int end) : _start(0), _end(end) {}
-        xrange(int start, int end) : _start(start), _end(end) {}
+        explicit constexpr xrange(const int end) : _start(0), _end(end) {}
+        constexpr xrange(int start, int end) : _start(start), _end(end) {}
 
-        xrange_iterator begin() const
+        constexpr xrange_iterator begin() const
         {
             return xrange_iterator(_start, _end);
         }
 
-        xrange_iterator end() const
+        constexpr xrange_iterator end() const
         {
             return xrange_iterator(_end);
         }
