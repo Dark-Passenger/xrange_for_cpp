@@ -15,13 +15,21 @@ class xrange_iterator
     constexpr bool ended() const { return (value >= end); }
 
     public:
+        #if __cplusplus == 201402L
+        constexpr xrange_iterator& operator++()
+        #else
         xrange_iterator& operator++()
+        #endif
         {
             value += 1;
             return *this;
         }
 
+        #if __cplusplus == 201402L
+        constexpr xrange_iterator operator++(int)
+        #else
         xrange_iterator operator++(int)
+        #endif
         {
             value += 1;
             return xrange_iterator(value - 1, end);
