@@ -18,4 +18,4 @@ for(const auto& i : xrange(10, 20))
 ```
 This as you can see is inspired from python's xrange structures.
 
-And added value its constexpr !!! c++11 compatible since the operator++ is not constexpr
+And added value its constexpr !!! c++11 compatible but better constexpr support for c++14 and beyond.
